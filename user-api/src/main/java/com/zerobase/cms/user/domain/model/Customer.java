@@ -13,6 +13,7 @@ import java.util.Locale;
 @Entity
 @Builder
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @AuditOverride(forClass = BaseEntity.class)
@@ -30,7 +31,7 @@ public class Customer extends BaseEntity{
 
     private LocalDateTime verifyExpiredAt;
     private String verificationCode;
-    private Boolean verify;
+    private boolean verify;
 
     public static Customer from(SignUpForm form){
         return Customer.builder()
